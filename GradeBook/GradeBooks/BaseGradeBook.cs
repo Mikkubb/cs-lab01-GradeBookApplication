@@ -14,8 +14,7 @@ namespace GradeBook.GradeBooks
     public class BaseGradeBook
     {
         public GradeBookType Type { get; set; }
-
-
+        public bool IsWeighted { get; set; }
         public string Name { get; set; }
         public List<Student> Students { get; set; }
 
@@ -127,6 +126,7 @@ namespace GradeBook.GradeBooks
             }
             return 0;
         }
+
 
         public virtual void CalculateStatistics()
         {
@@ -272,5 +272,7 @@ namespace GradeBook.GradeBooks
             
             return JsonConvert.DeserializeObject(json, gradebook);
         }
+
+        
     }
 }
